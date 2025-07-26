@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="../PrepMaster/css/result.css" />
+  </head>
+  <body>
+    <div class="result-container">
+      <h1>📝 Quiz Summary</h1>
+
+      <div id="result-summary">
+        <div class="result-meta">
+          <div class="subject-tag" id="subject-tag">📘 English</div>
+          <div class="score-display">
+            <span class="label">Score:</span>
+            <span class="value" id="score-value">0 / 0</span>
+          </div>
+        </div>
+
+        <p class="motivation" id="motivation-text">Loading motivation...</p>
+      </div>
+
+      <div class="buttons">
+        <!-- Go Home (clears everything) -->
+        <button onclick="localStorage.clear(); location.href='index.html'">
+          🏠 Go to Home
+        </button>
+
+        <!-- Restart quiz for same subject (keeps selectedSubject) -->
+        <button onclick="location.href='quiz.html'">🔁 Restart Quiz</button>
+      </div>
+    </div>
+
+    <script src="../PrepMaster/js/result.js"></script>
+  </body>
+</html>
