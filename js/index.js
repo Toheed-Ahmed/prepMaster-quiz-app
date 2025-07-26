@@ -57,5 +57,5 @@ document.getElementById("startQuizBtn").addEventListener("click", () => {
   console.log("Starting quiz with:", selectedSubject, selectedDifficulty);
 
   // Redirect to quiz
-  window.location.href = "../PrepMaster/quiz.html";
+ window.location.href = "quiz.html";
 });
