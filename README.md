@@ -18,14 +18,16 @@
 
 ---
 
+
+
 ## 🖼️ Screenshots
 
-| Screen                             | Preview                                         |
-| ---------------------------------- | ----------------------------------------------- |
-| **1. Welcome & Subject Selection** | ![Welcome Screen](./assets/Welcome-Subject.png) |
-| **2. Quiz Interface**              | ![Quiz Interface](./assets/Quiz-Interface.png)  |
-| **3. Dark Mode UI**                | ![Dark Mode](./assets/Dark-mode.png)            |
-| **4. Result Summary**              | ![Result Screen](./assets/Result.png)           |
+| Screen                             | Preview                                          |
+| ---------------------------------- | ------------------------------------------------ |
+| **1. Welcome & Subject Selection** | ![Welcome Screen](./Assets/welcome-subject.png) |
+| **2. Quiz Interface**              | ![Quiz Interface](./Assets/quiz-interface.png)  |
+| **3. Dark Mode UI**                | ![Dark Mode](./Assets/dark-mode.png)            |
+| **4. Result Summary**              | ![Result Screen](./Assets/result.png)           |
 
 > These images demonstrate PrepMaster's smooth navigation, vibrant UI, and intuitive user experience.
 
