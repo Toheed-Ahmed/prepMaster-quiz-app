@@ -1,4 +1,4 @@
-// ✅ Load subject & difficulty from localStorage
+//  Load subject & difficulty from localStorage
 let selectedSubject = localStorage.getItem("selectedSubject")?.trim();
 let selectedDifficulty = localStorage.getItem("selectedDifficulty")?.trim();
 
@@ -9,7 +9,7 @@ const subjectEmoji = {
   Chemistry: "🧪"
 };
 
-// 2️⃣ Update page heading with emoji
+//  Update page heading with emoji
 document.getElementById("subject-handling").innerText = `${subjectEmoji[selectedSubject]} ${selectedSubject} - ${selectedDifficulty} Quiz`;
 
 
@@ -666,7 +666,7 @@ hard: [
 
 
 
-// ✅ Get filtered questions
+//  Get filtered questions
 let questions = quizdata[selectedSubject]?.[selectedDifficulty];
 
 if (!questions || questions.length === 0) {
@@ -675,13 +675,13 @@ if (!questions || questions.length === 0) {
   throw new Error("No questions found.");
 }
 
-// ✅ Shuffle questions
+//  Shuffle questions
 questions = questions.sort(() => Math.random() - 0.5);
 
 let currentQuestionIndex = 0;
 let score = 0;
 
-// ✅ Display a question
+//  Display a question
 function questionDisplay() {
   let currentQuestion = questions[currentQuestionIndex];
   document.getElementById("question-title").textContent = currentQuestion.question;
@@ -710,7 +710,7 @@ function questionDisplay() {
   updateScore();
 }
 
-// ✅ Handle option selection
+//  Handle option selection
 function selectedAnswer(selectedLi, selectedOption, correctAnswer) {
   const allOptions = document.querySelectorAll("#options-list li");
   allOptions.forEach((li) => (li.style.pointerEvents = "none"));
@@ -728,7 +728,7 @@ function selectedAnswer(selectedLi, selectedOption, correctAnswer) {
   updateScore();
 }
 
-// ✅ Update score
+//  Update score
 function updateScore() {
   if (currentQuestionIndex >= questions.length) {
     document.getElementById("score-display").style.display = "block";
@@ -736,7 +736,7 @@ function updateScore() {
   }
 }
 
-// ✅ Navigation buttons
+//  Navigation buttons
 document.getElementById("next-btn").addEventListener("click", () => {
   if (currentQuestionIndex < questions.length - 1) {
     currentQuestionIndex++;
@@ -759,14 +759,14 @@ function updateNavigationButtons() {
     currentQuestionIndex === questions.length - 1 ? "Finish" : "Next";
 }
 
-// ✅ Show result screen
+//  Show result screen
 function showResult() {
   localStorage.setItem("finalScore", score);
   localStorage.setItem("totalQuestions", questions.length);
   window.location.href = "result.html";
 }
 
-// ✅ Restart
+//  Restart
 function restartQuiz() {
   currentQuestionIndex = 0;
   score = 0;
@@ -774,7 +774,7 @@ function restartQuiz() {
   questionDisplay();
 }
 
-// ✅ Dark Mode Toggle
+//  Dark Mode Toggle
 function toggleDarkMode() {
   const body = document.body;
   const toggleBtn = document.getElementById("theme-toggle");
@@ -790,7 +790,7 @@ function toggleDarkMode() {
   }
 }
 
-// ✅ Apply saved theme on load
+//  Apply saved theme on load
 window.onload = function () {
   const savedTheme = localStorage.getItem("theme");
   const toggleBtn = document.getElementById("theme-toggle");
