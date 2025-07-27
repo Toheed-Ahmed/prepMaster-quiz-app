@@ -1,7 +1,7 @@
 let selectedSubject = "";
 let selectedDifficulty = "";
 
-// 🎨 Subject background styles
+//  Subject background styles
 const subjectBackgrounds = {
   English: "linear-gradient(to bottom right, #c7d2fe, #eef2ff)",
   Physics: "linear-gradient(to bottom right, #fce7f3, #f3e8ff)",
