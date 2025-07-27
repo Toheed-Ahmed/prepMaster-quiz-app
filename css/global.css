@@ -147,30 +147,28 @@ h1 {
   }
 }
 
-
-.subjectline:nth-child(1) {
-    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-    color: #1e40af;
-    border-color: #3b82f6;
-}
-
-.subjectline:nth-child(2) {
-    background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
-    color: #7c3aed;
-    border-color: #8b5cf6;
-}
-
-.subjectline:nth-child(3) {
-    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-    color: #15803d;
-    border-color: #22c55e;
-}
-
+.subjectline:nth-child(1),
+.subjectline:nth-child(2),
+.subjectline:nth-child(3),
 .subjectline:nth-child(4) {
-    background: linear-gradient(135deg, #cffafe 0%, #a7f3d0 100%);
-    color: #0f766e;
-    border-color: #14b8a6;
+  background: linear-gradient(135deg, #dbeafe 0%, #60a5fa 100%); /* Light to bold blue */
+  color: #1e3a8a; /* Strong, deep blue for text */
+  border: 1px solid #3b82f6; /* Border with mid-blue */
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
+
+.subjectline:nth-child(1):hover,
+.subjectline:nth-child(2):hover,
+.subjectline:nth-child(3):hover,
+.subjectline:nth-child(4):hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+
 
 .subjectline:hover {
     transform: translateY(-4px);
@@ -307,24 +305,90 @@ header {
   flex-wrap: wrap;
 }
 
-.difficulty {
-  padding: 12px 28px;
-  font-size: 18px;
-  font-weight: 600;
-  border: none;
-  border-radius: 30px;
-  background: #e2e8f0;
-  color: #1e293b;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+.difficulty[data-level="Easy"] {
+  background-color: #10b981;
+}
+.difficulty[data-level="Easy"]:hover {
+  background-color: #34d399;
 }
 
-.difficulty:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #cbd5e1, #94a3b8);
-  color: white;
+
+.difficulty[data-level="Medium"] {
+  background-color: #0ea5e9; /* Sky Blue (Modern & cool) */
 }
+
+.difficulty[data-level="Hard"] {
+  background-color: #1e293b; /* Slate-800 */
+}
+.difficulty[data-level="Hard"]:hover {
+  background-color: #334155;
+}
+
+
+.difficulty {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+
+  color: #ffffff;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.difficulty[data-level="Easy"]:hover {
+  background-color: #4ade80;
+  color: #1e293b;
+}
+
+.difficulty[data-level="Medium"]:hover {
+  background-color: #38bdf8;
+  color: #1e293b;
+}
+
+.difficulty[data-level="Hard"]:hover {
+  background-color: #f87171;
+  color: #1e293b;
+}
+
+.difficulty:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+.emoji {
+  font-size: 20px;
+  line-height: 1;
+}
+@media (max-width: 768px) {
+  .difficulty {
+    width: 90%;
+    max-width: 300px;
+    font-size: 16px;
+    padding: 12px 20px;
+    white-space: nowrap; /* prevents line break between emoji and text */
+    text-align: center;
+  }
+}
+
+
+
 
 .difficulty.selected {
   background: linear-gradient(to right, #2563eb, #1d4ed8);
@@ -332,9 +396,52 @@ header {
   box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
 }
 
+
+.difficultySelection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.difficultySelection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+@media (max-width: 480px) {
+  .para2 {
+    font-size: 14px;
+    margin: 15px 10px;
+  }
+
+  .difficulty {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .difficultySelection {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .difficulty {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
 .start-quiz-container {
   text-align: center;
   margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #startQuizBtn {
@@ -345,9 +452,24 @@ header {
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  transition: background-Color0.3s ease;
+  transition: background-color 0.3s ease;
   box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+  max-width: 280px;
+  width: 90%;
 }
+@media (max-width: 768px) {
+  .start-quiz-container {
+    margin-top: 30px;
+    padding: 0 15px;
+  }
+
+  #startQuizBtn {
+    font-size: 18px;
+    padding: 12px 24px;
+    width: 100%;
+  }
+}
+
 
 #startQuizBtn:hover {
   background: linear-gradient(135deg, #059669, #047857);
@@ -385,5 +507,101 @@ footer {
 
   footer {
     position: relative;
+  }
+}
+/* ---------------- Responsive Improvements ---------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .para1 {
+    font-size: 24px;
+  }
+
+  .para2 {
+    font-size: 18px;
+  }
+
+  .difficulty {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+
+  #startQuizBtn {
+    font-size: 18px;
+    padding: 12px 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .subjectSelection {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .subjectline {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 15px;
+    padding: 12px 18px;
+  }
+
+  .difficulty-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .para1, .para2 {
+    padding: 0 15px;
+    font-size: 16px;
+  }
+
+  #startQuizBtn {
+    width: 90%;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 10px 0;
+  }
+}
+
+/* Very Small Devices */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  .para1 {
+    font-size: 18px;
+  }
+
+  .difficulty {
+    font-size: 15px;
+  }
+
+  #startQuizBtn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    height: 48px;
+    width: auto;
   }
 }
