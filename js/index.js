@@ -9,7 +9,7 @@ const subjectBackgrounds = {
   Chemistry: "linear-gradient(to bottom right, #fef9c3, #fcd34d)"
 };
 
-// ✅ Subject Selection
+//  Subject Selection
 document.querySelectorAll(".subjectline").forEach((button) => {
   button.addEventListener("click", () => {
     // Remove 'selected' class from all buttons
@@ -30,7 +30,7 @@ document.querySelectorAll(".subjectline").forEach((button) => {
   });
 });
 
-// ✅ Difficulty Selection
+//  Difficulty Selection
 document.querySelectorAll(".difficulty").forEach((button) => {
   button.addEventListener("click", () => {
     // Remove 'selected' from all buttons
@@ -47,7 +47,7 @@ document.querySelectorAll(".difficulty").forEach((button) => {
   });
 });
 
-// ✅ Start Quiz Button
+//  Start Quiz Button
 document.getElementById("startQuizBtn").addEventListener("click", () => {
   if (!selectedSubject || !selectedDifficulty) {
     alert("Please select both subject and difficulty to begin.");
