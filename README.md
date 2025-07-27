@@ -24,7 +24,7 @@
 
 | Screen                             | Preview                                          |
 | ---------------------------------- | ------------------------------------------------ |
-| **1. Welcome & Subject Selection** | ![Welcome Screen](./Assets/welcome-subject.png) |
+| **1. Welcome & Subject Selection** | ![Welcome Screen](./Assets/welcome-subject2.png) |
 | **2. Quiz Interface**              | ![Quiz Interface](./Assets/quiz-interface.png)  |
 | **3. Dark Mode UI**                | ![Dark Mode](./Assets/dark-mode.png)            |
 | **4. Result Summary**              | ![Result Screen](./Assets/result.png)           |
